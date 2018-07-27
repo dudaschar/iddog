@@ -1,0 +1,20 @@
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 100px 150px 75px;
+  box-sizing: border-box; }
+  .header h1 {
+    font-family: Helvetica;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    font-size: 36px; }
+    .header h1 span {
+      font-weight: 600;
+      letter-spacing: 5px; }
+
+@media (max-width: 576px) {
+  .header {
+    padding: 75px 25px 50px; }
+    .header h1 {
+      font-size: 24px; } }
