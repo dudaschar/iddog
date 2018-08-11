@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import './index.css';
-import Feed from './pages/feed/Feed';
-import registerServiceWorker from './registerServiceWorker';
+import './index.css'
+import Feed from './pages/feed/Feed'
+import Auth from './pages/auth/Auth'
+import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(
     <BrowserRouter>

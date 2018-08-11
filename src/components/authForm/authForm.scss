@@ -1,0 +1,38 @@
+.auth-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__input {
+    border: none;
+    border-bottom: 1px solid #a8a8a8;
+    width: 300px;
+    text-align: center;
+    font-size: 16px;
+    padding: 3px 10px;
+    height: 30px;
+    font-weight: 300;
+    &:focus {
+      outline: 0;
+    }
+    @media (max-width: 576px) {
+      width: 200px;
+    }
+  }
+  &__button {
+    height: 36px;
+    text-transform: uppercase;
+    border: 1px solid #4ee56e;
+    padding: 0 10px;
+    background: white;
+    color: #4ee56e;
+    margin-left: 20px;
+    transition: 1s;
+    cursor: pointer
+  }
+  &__button:disabled {
+    cursor: not-allowed;
+    border: 1px solid #a8a8a8;
+    color: #a8a8a8;
+  }
+}
