@@ -1,0 +1,26 @@
+.nav {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 0;
+  }
+  &__link {
+    text-decoration: none;
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #a8a8a8;
+    letter-spacing: 2px;
+    &--active {
+      color: black;
+    }
+    @media (max-width: 576px) {
+      font-size: 12px;
+      &--mobile {
+        display: none;
+      }
+    }
+  }
+}

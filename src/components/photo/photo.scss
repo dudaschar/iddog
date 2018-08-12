@@ -1,0 +1,23 @@
+.photo {
+  &__list {
+      margin: 25px;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    -webkit-box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.38);
+    box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.38);
+    img {
+      width: 100%;
+      min-height: 100%;
+      cursor: pointer
+    }
+  }
+  .popup-content {
+    width: auto !important;
+  }
+  &__modal {
+    max-height: 80%;
+  }
+}
+

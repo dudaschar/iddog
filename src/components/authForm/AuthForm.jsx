@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import './authForm.css'
 
 class AuthForm extends React.Component {
@@ -42,12 +43,22 @@ class AuthForm extends React.Component {
     },
     method: "POST"
     }).then(response => response.json())
-      .then(response => {
-        sessionStorage.setItem("token", response.user.token)
-        let token = sessionStorage.getItem("token")
-      })
-   
+    .then(response => {
+      sessionStorage.setItem("token", response.user.token)
+      let token = sessionStorage.getItem("token")
+    })
+    .then( () => {
+      
+    }
+      
+    )
   }
+
+  redirectFeed() {
+    return <Redirect to='/feed' />
+  }
+
+
   render() {
     return (
       <div className="auth-form">

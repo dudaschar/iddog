@@ -1,26 +1,23 @@
 .header {
-    width: 100%;
-    text-align: center;
-    padding: 100px 150px 75px;
-    box-sizing: border-box;
-    h1 {
-        font-family: Helvetica;
-        text-transform: uppercase;
-        font-weight: 100;
-        letter-spacing: 3px;
-        font-size: 36px;
-        span {
-            font-weight: 600;
-            letter-spacing: 5px;
-        }
+  width: 100%;
+  text-align: center;
+  padding: 100px 150px 25px;
+  box-sizing: border-box;
+  @media (max-width: 576px) {
+    padding: 75px 25px 25px;
+  }
+  h1 {
+    font-family: Helvetica;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    font-size: 36px;
+    @media (max-width: 576px) {
+      font-size: 24px;
     }
-}
-
-@media (max-width: 576px) {
-    .header {
-        padding: 75px 25px 50px;
-        h1 {
-            font-size: 24px;
-        }
+    span {
+      font-weight: 600;
+      letter-spacing: 5px;
     }
+  }
 }
