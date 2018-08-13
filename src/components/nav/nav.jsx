@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 import './nav.css'
 
@@ -10,7 +9,6 @@ const Nav = ({ onClick }) => (
       <li>
         <Link
           className="nav__link"
-          onClick={onClick}
           to="/feed?category=husky"
         >
             Husky
@@ -20,7 +18,6 @@ const Nav = ({ onClick }) => (
       <li>
         <Link
           className="nav__link"
-          onClick={onClick}
           to="/feed?category=labrador"
         >
           Labrador
@@ -30,7 +27,6 @@ const Nav = ({ onClick }) => (
       <li>
         <Link
           className="nav__link"
-          onClick={onClick}
           to="/feed?category=hound"
         >
           Hound
@@ -40,7 +36,6 @@ const Nav = ({ onClick }) => (
       <li>
         <Link
           className="nav__link"
-          onClick={onClick}
           to="/feed?category=pug"
         >
           Pug
@@ -49,9 +44,5 @@ const Nav = ({ onClick }) => (
     </ul>
   </div>
 )
-
-Nav.propTypes = {
-  onClick: PropTypes.func.isRequired,
-}
 
 export default Nav

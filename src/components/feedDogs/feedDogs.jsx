@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
-import queryString from 'query-string';
+import queryString from 'query-string'
+import { withRouter } from 'react-router-dom'
 import Nav from '../nav/nav'
 import Photo from '../photo/Photo'
 import './feedDogs.css'
 
 class FeedDogs extends React.Component {
-  constructor() {
-    super()
-    this.renderFeed = this.renderFeed.bind(this)
+  constructor(props) {
+    super(props)
     this.state = {
       pictures: [],
       dogSelected: 'husky'
     }
+    this.renderFeed()
   }
-
 
   renderFeed() {
   const token = sessionStorage.getItem("token")
   const url = "https://api-iddog.idwall.co/feed?category="
-  const params = queryString.parse(window.location.search)
+  let dogSelected = this.props.category
   let feedContent = []
   const feedHeader = {
     Authorization: token,
@@ -27,9 +27,7 @@ class FeedDogs extends React.Component {
   const initFetch = {
     headers: feedHeader,
   }
-  let dogPictures = []
-
-  fetch(`${url}${params.category}`, initFetch)
+  fetch(`${url}${dogSelected}`, initFetch)
     .then((response) => {
       return response.json()
     })
@@ -38,27 +36,28 @@ class FeedDogs extends React.Component {
       feedContent = contentFetch.map((image, i) => {
         return <div className="feed-dogs__image" key={i}><Photo img={image} /></div>
       })
-      this.setState((prevState) =>
-        ({ pictures: feedContent }))
+      this.setState({ pictures: feedContent})
     })
+    .catch(() => this.props.history.push("/"))
   }
 
-  componentWillMount() {
-    this.renderFeed('husky')
+  componentDidUpdate(oldProps) {
+    if (oldProps.category !== this.props.category) { 
+      this.renderFeed() 
+    }
   }
 
   render() {
     
     return (
       <div className="feed-dogs">
-      <Nav onClick={this.renderFeed} />
-      <div className="feed-dogs__list">
-        {this.state.pictures}
-      </div>
-        
+        <Nav />
+        <div className="feed-dogs__list">
+          {this.state.pictures}
+        </div>  
       </div>
     )
   }
 }
 
-export default FeedDogs
+export default withRouter(FeedDogs)

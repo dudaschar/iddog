@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { withRouter } from "react-router-dom"
 import './authForm.css'
 
 class AuthForm extends React.Component {
@@ -46,16 +46,8 @@ class AuthForm extends React.Component {
     .then(response => {
       sessionStorage.setItem("token", response.user.token)
       let token = sessionStorage.getItem("token")
+      this.props.history.push("/feed")
     })
-    .then( () => {
-      
-    }
-      
-    )
-  }
-
-  redirectFeed() {
-    return <Redirect to='/feed' />
   }
 
 
@@ -82,4 +74,4 @@ class AuthForm extends React.Component {
   }
 }
 
-export default AuthForm
+export default withRouter(AuthForm)
