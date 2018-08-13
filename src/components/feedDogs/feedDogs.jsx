@@ -51,7 +51,7 @@ class FeedDogs extends React.Component {
     
     return (
       <div className="feed-dogs">
-        <Nav />
+        <Nav category={this.props.category} />
         <div className="feed-dogs__list">
           {this.state.pictures}
         </div>  
