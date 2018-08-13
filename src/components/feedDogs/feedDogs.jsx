@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import queryString from 'query-string'
 import { withRouter } from 'react-router-dom'
 import Nav from '../nav/nav'
 import Photo from '../photo/Photo'

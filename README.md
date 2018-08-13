@@ -2,7 +2,7 @@
 
 This is an implementation of search service for dog's pictures.
 
-[Visit the page](https://desafiogeru.surge.sh)
+[Visit the page](https://iddog.surge.sh)
 
 ## Getting Started
 

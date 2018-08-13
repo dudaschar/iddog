@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import queryString from 'query-string'
+import qs from 'qs'
 import Header from '../../components/header/Header'
 import FeedDogs from '../../components/feedDogs/feedDogs'
 
@@ -9,7 +9,7 @@ class Feed extends React.Component {
   }
   
   getCategory() {
-    const params = queryString.parse(this.props.location.search)
+    const params = qs.parse(this.props.location.search, { ignoreQueryPrefix: true })
     let category = params.category
     if (typeof category === 'undefined') {
       category = 'husky'
