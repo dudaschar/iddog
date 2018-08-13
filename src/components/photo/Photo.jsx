@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import Fade from 'react-reveal/Fade'
 import PropTypes from 'prop-types'
 import Popup from 'reactjs-popup'
 
@@ -9,9 +9,11 @@ const Photo = ({ img }) => (
   <div className="photo">
     <Popup
       trigger={
-        <div className="photo__list">
-          <img src={img} />
-        </div>
+        <Fade>
+          <div className="photo__list">
+            <img src={img} />
+          </div>
+        </Fade>
       }
       modal
       closeOnDocumentClick
